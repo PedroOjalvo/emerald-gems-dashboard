@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 90%;
+
+    --card: 220 30% 7%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 220 30% 7%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 160 82% 46%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 25% 14%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 20% 12%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 220 25% 14%;
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 18%;
+    --ring: 160 82% 46%;
+
+    --radius: 0.75rem;
+
+    --ruby: 0 72% 55%;
+    --ruby-foreground: 210 40% 98%;
+    --amber: 38 92% 50%;
+    --amber-foreground: 220 20% 4%;
+    --emerald: 160 82% 46%;
+    --emerald-foreground: 220 20% 4%;
+    --vibrant: 335 85% 60%;
+    --vibrant-foreground: 220 20% 4%;
+    --silver: 210 70% 55%;
+    --silver-foreground: 210 40% 98%;
+
+    --sidebar-background: 220 30% 7%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 160 82% 46%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 25% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 160 82% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-outfit antialiased;
+  }
+}
+
+@layer utilities {
+  .font-mono-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .noise-bg {
+    position: relative;
+  }
+  .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
